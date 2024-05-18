@@ -5,10 +5,10 @@ import { GLTFResult } from '@/types'
 
 const path = 'iphone.glb'
 
-const IPhone = (props: JSX.IntrinsicElements['group']) => {
+const IPhone = () => {
   const { nodes, materials } = useGLTF(path) as GLTFResult
   return (
-    <group {...props} dispose={null}>
+    <group scale={[30, 30, 30]} dispose={null}>
       <mesh
         castShadow
         receiveShadow
