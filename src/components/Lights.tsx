@@ -1,11 +1,13 @@
+import PointLight from './PointLight'
+
 const Lights = () => {
   return (
     <>
-      <ambientLight intensity={20} />
-      <directionalLight intensity={20} position={[5, 1, 1]} />
-      <directionalLight intensity={20} position={[-5, 1, 1]} />
-      <directionalLight intensity={10} position={[1, 5, 1]} />
-      <directionalLight intensity={10} position={[1, -5, 1]} />
+      <ambientLight intensity={25} />
+      <PointLight x={10} y={0} />
+      <PointLight x={-10} y={0} />
+      <PointLight x={0} y={10} />
+      <PointLight x={0} y={-10} />
     </>
   )
 }
