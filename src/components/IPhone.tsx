@@ -2,13 +2,19 @@
 
 import { useGLTF } from '@react-three/drei'
 import { GLTFResult } from '@/types'
+import { setCursor } from '@/utils'
 
 const path = 'iphone.glb'
 
 const IPhone = () => {
   const { nodes, materials } = useGLTF(path) as GLTFResult
   return (
-    <group scale={[30, 30, 30]} dispose={null}>
+    <group
+      scale={[30, 30, 30]}
+      dispose={null}
+      onPointerOver={() => setCursor('pointer')}
+      onPointerOut={() => setCursor('auto')}
+    >
       <mesh
         castShadow
         receiveShadow

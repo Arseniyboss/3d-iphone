@@ -2,7 +2,7 @@ import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import Loader from './components/Loader'
-import Lights from './components/Lights'
+import Lights from './components/light/Lights'
 import IPhone from './components/IPhone'
 
 const App = () => {
