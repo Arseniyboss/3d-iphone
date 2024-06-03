@@ -1,0 +1,22 @@
+.color-wrapper {
+  height: 50dvh;
+}
+
+.color-container {
+  display: flex;
+  position: absolute;
+  gap: 1rem;
+  bottom: 2rem;
+}
+
+.color-container button {
+  border: none;
+  list-style-type: none;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.color-container button.active {
+  outline: 2px solid white;
+}

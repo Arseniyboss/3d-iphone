@@ -1,13 +1,34 @@
 // Source: https://gltf.pmnd.rs
 
-import { useGLTF } from '@react-three/drei'
+import { Color } from 'three'
+import { useEffect } from 'react'
+import { useGLTF, useTexture } from '@react-three/drei'
+import { useColorContext } from '@/context/useColorContext'
 import { GLTFResult } from '@/types'
 import { setCursor } from '@/utils'
 
-const path = 'iphone.glb'
+const path = '/iphone.glb'
 
 const IPhone = () => {
   const { nodes, materials } = useGLTF(path) as GLTFResult
+  const { activeColor } = useColorContext()
+  const texture = useTexture(activeColor.texture)
+
+  useEffect(() => {
+    Object.entries(materials).map((material) => {
+      const frontFrame = material[0] === 'zFdeDaGNRwzccye'
+      const frontCamera = material[0] === 'ujsvqBWRMnqdwPx'
+      const backCamera = material[0] === 'PaletteMaterial003'
+      const backCameraLenses = material[0] === 'PpwUTnTFZJXxCoE'
+      const backCameraDot = material[0] === 'vhaEJjZoqGtyLdo'
+      if (!frontFrame && !frontCamera) {
+        material[1].color = new Color(activeColor.value)
+      }
+      if (backCamera || backCameraLenses || backCameraDot) {
+        material[1].emissive = new Color(activeColor.value)
+      }
+    })
+  }, [materials, activeColor])
   return (
     <group
       scale={[30, 30, 30]}
@@ -126,7 +147,9 @@ const IPhone = () => {
         geometry={nodes.xXDHkMplTIDAXLN.geometry}
         material={materials.pIJKfZsazmcpEiU}
         scale={0.01}
-      />
+      >
+        <meshStandardMaterial map={texture} />
+      </mesh>
       <mesh
         castShadow
         receiveShadow

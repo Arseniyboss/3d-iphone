@@ -3,7 +3,7 @@ import PointLight from './PointLight'
 const Lights = () => {
   return (
     <>
-      <ambientLight intensity={25} />
+      <ambientLight intensity={10} />
       <PointLight x={10} y={0} />
       <PointLight x={-10} y={0} />
       <PointLight x={0} y={10} />

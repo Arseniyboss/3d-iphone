@@ -1,5 +1,16 @@
+import { Dispatch, SetStateAction } from 'react'
 import { Mesh, MeshStandardMaterial } from 'three'
 import { GLTF } from 'three-stdlib'
+
+export type ColorContextType = {
+  activeColor: Color
+  setActiveColor: Dispatch<SetStateAction<Color>>
+}
+
+export type Color = {
+  value: string
+  texture: string
+}
 
 type Nodes = {
   ttmRoLdJipiIOmf: Mesh

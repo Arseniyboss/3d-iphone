@@ -1,9 +1,10 @@
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
-import Loader from './components/Loader'
 import Lights from './components/light/Lights'
+import Loader from './components/Loader'
 import IPhone from './components/IPhone'
+import Colors from './components/colors/Colors'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Suspense fallback={<Loader />}>
         <IPhone />
       </Suspense>
+      <Colors />
     </Canvas>
   )
 }
