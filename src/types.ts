@@ -1,14 +1,16 @@
 import { Dispatch, SetStateAction } from 'react'
-import { Mesh, MeshStandardMaterial } from 'three'
+import { MeshStandardMaterial, Mesh } from 'three'
 import { GLTF } from 'three-stdlib'
 
-export type ColorContextType = {
-  activeColor: Color
-  setActiveColor: Dispatch<SetStateAction<Color>>
+export type Material = [string, MeshStandardMaterial]
+
+export type IPhoneContextType = {
+  currentModel: Model
+  setCurrentModel: Dispatch<SetStateAction<Model>>
 }
 
-export type Color = {
-  value: string
+export type Model = {
+  color: string
   texture: string
 }
 
