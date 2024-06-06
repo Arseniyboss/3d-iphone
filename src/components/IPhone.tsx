@@ -22,7 +22,7 @@ const IPhone = () => {
   }, [materials, currentModel])
   return (
     <group
-      scale={[30, 30, 30]}
+      scale={[27, 27, 27]}
       dispose={null}
       onPointerOver={() => setCursor('pointer')}
       onPointerOut={() => setCursor('auto')}
