@@ -1,24 +1,23 @@
-import './Colors.css'
-import { Html } from '@react-three/drei'
 import { useIPhoneContext } from '@/context/useIPhoneContext'
+import { ColorWrapper, ColorContainer, Color } from './styles'
 import { models } from '@/models'
 
 const Colors = () => {
   const { currentModel, setCurrentModel } = useIPhoneContext()
   return (
-    <Html className='center color-wrapper'>
-      <div className='color-container'>
+    <ColorWrapper>
+      <ColorContainer>
         {models.map((model, index) => (
-          <button
+          <Color
             key={index}
+            color={model.color}
+            $isActive={model.color === currentModel.color}
             onClick={() => setCurrentModel(model)}
-            className={model.color === currentModel.color ? 'active' : ''}
-            style={{ background: model.color }}
             aria-label='change color'
           />
         ))}
-      </div>
-    </Html>
+      </ColorContainer>
+    </ColorWrapper>
   )
 }
 

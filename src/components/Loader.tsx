@@ -1,10 +1,10 @@
-import { Html } from '@react-three/drei'
+import { Container } from '@/styles'
 
 const Loader = () => {
   return (
-    <Html>
-      <p className='center'>Loading...</p>
-    </Html>
+    <Container>
+      <p>Loading...</p>
+    </Container>
   )
 }
 

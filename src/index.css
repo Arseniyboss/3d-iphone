@@ -13,10 +13,3 @@ canvas {
   background: black;
   height: 100dvh;
 }
-
-.center {
-  width: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
