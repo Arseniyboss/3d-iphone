@@ -13,8 +13,8 @@ const App = () => {
       <Lights />
       <Suspense fallback={<Loader />}>
         <IPhone />
+        <Colors />
       </Suspense>
-      <Colors />
     </Canvas>
   )
 }
