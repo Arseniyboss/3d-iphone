@@ -5,11 +5,11 @@ type ColorProps = {
   $isActive: boolean
 }
 
-export const ColorWrapper = styled(Container)`
+export const ColorContainer = styled(Container)`
   height: 50dvh;
 `
 
-export const ColorContainer = styled.div`
+export const ColorWrapper = styled.div`
   background: #1d1d1e;
   display: flex;
   position: absolute;

@@ -1,23 +1,23 @@
 import { useIPhoneContext } from '@/context/useIPhoneContext'
-import { ColorWrapper, ColorContainer, Color } from './styles'
+import { ColorContainer, ColorWrapper, Color } from './styles'
 import { models } from '@/models'
 
 const Colors = () => {
   const { currentModel, setCurrentModel } = useIPhoneContext()
   return (
-    <ColorWrapper>
-      <ColorContainer>
+    <ColorContainer>
+      <ColorWrapper>
         {models.map((model, index) => (
           <Color
             key={index}
             color={model.color}
             $isActive={model.color === currentModel.color}
             onClick={() => setCurrentModel(model)}
-            aria-label='change color'
+            aria-label="change color"
           />
         ))}
-      </ColorContainer>
-    </ColorWrapper>
+      </ColorWrapper>
+    </ColorContainer>
   )
 }
 
