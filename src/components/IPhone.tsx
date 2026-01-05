@@ -11,7 +11,7 @@ const path = '/iphone.glb'
 
 const IPhone = () => {
   const { currentModel } = useIPhoneContext()
-  const { nodes, materials } = useGLTF(path) as GLTFResult
+  const { nodes, materials } = useGLTF(path) as unknown as GLTFResult
 
   const texture = useTexture(currentModel.texture)
 
